@@ -4,12 +4,13 @@
 #
 Name     : perl-Text-Haml
 Version  : 0.990118
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/V/VT/VTI/Text-Haml-0.990118.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/V/VT/VTI/Text-Haml-0.990118.tar.gz
 Summary  : 'Haml Perl implementation'
 Group    : Development/Tools
 License  : Artistic-2.0
+Requires: perl-Text-Haml-license = %{version}-%{release}
 Requires: perl-Text-Haml-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(ExtUtils::Config)
@@ -32,6 +33,14 @@ Requires: perl-Text-Haml = %{version}-%{release}
 
 %description dev
 dev components for the perl-Text-Haml package.
+
+
+%package license
+Summary: license components for the perl-Text-Haml package.
+Group: Default
+
+%description license
+license components for the perl-Text-Haml package.
 
 
 %package perl
@@ -62,6 +71,8 @@ fi
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Text-Haml
+cp %{_builddir}/Text-Haml-0.990118/LICENSE %{buildroot}/usr/share/package-licenses/perl-Text-Haml/d0d70d43f22d9ba44a7f5a48a6c5925165062974
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -79,6 +90,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %defattr(-,root,root,-)
 /usr/share/man/man3/Text::Haml.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Text-Haml/d0d70d43f22d9ba44a7f5a48a6c5925165062974
+
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Text/Haml.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Text/Haml.pm
