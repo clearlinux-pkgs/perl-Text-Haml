@@ -4,7 +4,7 @@
 #
 Name     : perl-Text-Haml
 Version  : 0.990118
-Release  : 6
+Release  : 7
 URL      : https://cpan.metacpan.org/authors/id/V/VT/VTI/Text-Haml-0.990118.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/V/VT/VTI/Text-Haml-0.990118.tar.gz
 Summary  : 'Haml Perl implementation'
@@ -96,4 +96,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Text/Haml.pm
+/usr/lib/perl5/*
