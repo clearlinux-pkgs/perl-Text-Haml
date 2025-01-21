@@ -4,7 +4,7 @@
 #
 Name     : perl-Text-Haml
 Version  : 0.990118
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/V/VT/VTI/Text-Haml-0.990118.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/V/VT/VTI/Text-Haml-0.990118.tar.gz
 Summary  : 'Haml Perl implementation'
